@@ -23,10 +23,10 @@ except socket.gaierror:
 #---->3---->connection to the remote server
 port = 80
 s.connect((ip_addr,port))
-print 'socket connected to ' + host + ' on ip ' + ip_addr
+print 'Socket connected to ' + host + ' on ip ' + ip_addr
 
 #---->4---->preapare the message to be sent to the server
-message = "GET / HTTP/1.1\r\n\r\n"
+message = "HEAD / HTTP/1.1\r\n\r\n"
 try:
 	#send the whole string
 	s.sendall(message)
@@ -34,7 +34,6 @@ except socket.error:
 	#sending failed
 	print 'Communication failed.'
 	sys.exit()
-print 'Message sent succesfully'
 
 #---->5---->Receiving the data
 reply = s.recv(4096)
