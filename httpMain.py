@@ -26,7 +26,7 @@ s.connect((ip_addr,port))
 print 'Socket connected to ' + host + ' on ip ' + ip_addr
 
 #---->4---->preapare the message to be sent to the server
-message = "HEAD / HTTP/1.1\r\n\r\n"
+message = "HEAD / HTTP/1.1\r\nHost:" + host + "\r\n\r\n"
 try:
 	#send the whole string
 	s.sendall(message)
